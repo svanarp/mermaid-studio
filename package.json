@@ -1,0 +1,22 @@
+{
+  "name": "mermaid-studio",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "esbuild test/smoke.ts --bundle --platform=node --format=esm --outfile=.tmp-test/smoke.mjs && node .tmp-test/smoke.mjs && rm -rf .tmp-test",
+    "test:e2e": "node test/e2e.mjs && node test/e2e-big.mjs && node test/e2e-html.mjs"
+  },
+  "dependencies": {
+    "mermaid": "^11.4.1"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.62.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
+  }
+}
