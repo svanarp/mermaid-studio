@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mermaid Studio</title>
+    <script type="module" crossorigin src="./assets/index-B0z8MqVs.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CMYrOzOI.css">
+  </head>
+  <body>
+    <div id="app">
+      <header id="header">
+        <div class="brand">&#128737; Mermaid Studio</div>
+        <div class="tabs" id="tabs"></div>
+        <div class="header-actions">
+          <button id="btn-templates" class="ghost" title="Templates">Templates</button>
+          <button id="btn-settings" class="ghost" title="Settings">Settings</button>
+          <button id="btn-share" class="ghost" title="Share via URL">Share</button>
+          <span class="hdivider"></span>
+          <button id="btn-export-svg" class="primary" title="Export SVG (Ctrl+S)">SVG</button>
+          <button id="btn-export-png" class="primary" title="Export PNG (Ctrl+Shift+S)">PNG</button>
+          <button id="btn-export-html" class="primary" title="Export HTML (Ctrl+H)">HTML</button>
+          <button id="btn-copy-png" class="ghost" title="Copy PNG to clipboard">Copy</button>
+          <span class="hdivider"></span>
+          <button id="btn-theme" class="ghost" title="Toggle light/dark">Theme</button>
+        </div>
+      </header>
+
+      <section id="main">
+        <div id="editor">
+          <div class="pane-head">
+            <span>Source</span>
+            <span id="render-status" class="muted">Ready</span>
+          </div>
+          <div id="editor-wrap">
+            <pre id="code-layer" aria-hidden="true"></pre>
+            <textarea
+              id="code-input"
+              wrap="off"
+              spellcheck="false"
+              autocomplete="off"
+              autocapitalize="off"
+              placeholder="Type your mermaid diagram here…"
+            ></textarea>
+          </div>
+        </div>
+
+        <div id="divider" title="Drag to resize"></div>
+
+        <div id="preview">
+          <div class="pane-head">
+            <span>Preview</span>
+            <div class="zoom-controls">
+              <button data-zoom="out" title="Zoom out">&#8722;</button>
+              <button data-zoom="in" title="Zoom in">&#43;</button>
+              <button data-zoom="fit" title="Fit to width">Fit</button>
+              <button data-zoom="100" title="100%">1:1</button>
+            </div>
+          </div>
+          <div id="viewport"><div id="stage"></div></div>
+        </div>
+      </section>
+
+      <footer id="statusbar"><span id="status-text">Ready</span><span class="credit">Made with 💛 by Pranav Yaddanapudi</span></footer>
+    </div>
+
+    <div id="templates-panel" class="overlay-panel hidden"></div>
+
+    <div id="settings-panel" class="overlay-panel hidden">
+      <div class="panel-title">Settings</div>
+      <label>
+        <span>Theme</span>
+        <select id="set-theme"></select>
+      </label>
+      <label>
+        <span>Flowchart direction</span>
+        <select id="set-direction">
+          <option value="TB">TB (top to bottom)</option>
+          <option value="TD">TD (top down)</option>
+          <option value="LR">LR (left to right)</option>
+          <option value="RL">RL (right to left)</option>
+          <option value="BT">BT (bottom to top)</option>
+        </select>
+      </label>
+      <label>
+        <span>Font size</span>
+        <input id="set-fontsize" type="number" min="8" max="40" />
+      </label>
+      <label>
+        <span>Security level</span>
+        <select id="set-security">
+          <option value="strict">strict</option>
+          <option value="loose">loose</option>
+          <option value="antiscript">antiscript</option>
+          <option value="sandbox">sandbox</option>
+        </select>
+      </label>
+      <label>
+        <span>PNG scale</span>
+        <select id="set-scale">
+          <option value="1">1x</option>
+          <option value="2">2x</option>
+          <option value="3">3x</option>
+          <option value="4">4x</option>
+        </select>
+      </label>
+      <label>
+        <span>Background color (export)</span>
+        <input id="set-bg" type="color" />
+      </label>
+      <div class="panel-actions">
+        <button id="btn-settings-close" class="ghost">Close</button>
+      </div>
+    </div>
+
+  </body>
+</html>
